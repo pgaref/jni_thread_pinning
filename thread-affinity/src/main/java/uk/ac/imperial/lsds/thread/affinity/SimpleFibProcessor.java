@@ -19,7 +19,7 @@ public class SimpleFibProcessor implements Runnable {
 	/* coreID */
 	private int coreID;
 	
-	static Logger LOG = LoggerFactory.getLogger(SimpleFibProcessor.class.getName());
+	private static Logger LOG = LoggerFactory.getLogger(SimpleFibProcessor.class.getName());
 	
 	private ConcurrentLinkedQueue<BigInteger> queue;
 	

@@ -7,9 +7,11 @@ package uk.ac.imperial.lsds.thread.affinity;
 public class Utils {
 	
 	static String PROJECT_HOME;
-	static boolean HYPER_THREAD=false;
-	static int WORKER_THREADS = 8;
-	
+	/* Experiments conf */
+	static boolean CORE_PIN=false;
+	static boolean HYPER_THREAD=true;
+	static int WORKER_THREADS = 4;
+	/* Up to here */
 	
 	public static String getProjectHome(){
 		if(Utils.PROJECT_HOME == null)
