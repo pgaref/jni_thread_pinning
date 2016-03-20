@@ -1,22 +1,25 @@
 package uk.ac.imperial.lsds.thread.affinity;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * @author pg1712
  *
  */
 public class TheCPU {
 	
-	private static final String cpuLibrary = 
-		Utils.getProjectHome() + "/clib/libCPU.so";
-	
+	private static final String cpuLibrary = Utils.getProjectHome() + "/clib/libCPU.so";
+	/* Singleton Instance */
 	private static final TheCPU cpuInstance = new TheCPU ();
+	private static Logger LOG = LoggerFactory.getLogger(TheCPU.class);
 	
 	static {
 		try {
 			System.load (cpuLibrary);
 		} catch (final UnsatisfiedLinkError e) {
-			System.err.println(e.getMessage());
-			System.err.println("error: failed to load CPU library");
+			LOG.error(e.getMessage());
+			LOG.error("Failed to load CPU JNI library");
 			System.exit(1);
 		}
 	}
@@ -25,7 +28,6 @@ public class TheCPU {
 	
 	/**
 	 * Thread affinity functions - Implemented using JNI
-	 * 
 	 */
 	
 	/* Returns the Total number of CPU Cores (including HTs if available) */
