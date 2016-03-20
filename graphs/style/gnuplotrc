@@ -1,0 +1,7 @@
+set style line 1 lw 4 lt 1 pt 11 ps .6 lc rgb "#377eb8"
+set style line 2 lw 4 lt 1 pt 7 ps .6 lc rgb "#e41a1c"
+set style line 3 lw 4 lt 1 pt 2 ps .6 lc rgb "#4daf4a"
+set style line 4 lw 4 lt 1 pt 9 ps .6 lc rgb "#000000"
+set style line 5 lw 4 lt 1 pt 9 ps .6 lc rgb "#ff66ff"
+
+set style increment user
