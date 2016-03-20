@@ -17,4 +17,5 @@ Run on CPU:  Intel(R) Core(TM) i7-4770 CPU @ 3.40GHz with
 
 
 ## References
-[Reducing system jitter](http://epickrram.blogspot.co.uk/2015/09/reducing-system-jitter.html)
+[Reducing system jitter-part1](http://epickrram.blogspot.co.uk/2015/09/reducing-system-jitter.html)
+[Reducing system jitter-part2](http://epickrram.blogspot.co.uk/2015/11/reducing-system-jitter-part-2.html)
