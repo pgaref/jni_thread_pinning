@@ -13,4 +13,4 @@ Run on CPU:  Intel(R) Core(TM) i7-4770 CPU @ 3.40GHz with
 * 4 Hyper Threads
 * 8 usable processors in total
 
-![Thread affinity](http://github.com/pgaref/jni_thread_pinning/blob/master/graphs/thread-affinity.pdf)
+![alt tag](https://github.com/pgaref/jni_thread_pinning/blob/master/graphs/thread-affinity.pdf)
