@@ -14,3 +14,7 @@ Run on CPU:  Intel(R) Core(TM) i7-4770 CPU @ 3.40GHz with
 * 8 usable processors in total
 
 ![Thead Affinity Comparison](https://github.com/pgaref/jni_thread_pinning/blob/master/graphs/thread-affinity.jpg)
+
+
+## References
+[Reducing system jitter](http://epickrram.blogspot.co.uk/2015/09/reducing-system-jitter.html)
