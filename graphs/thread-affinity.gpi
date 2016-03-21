@@ -12,13 +12,15 @@ set rmargin 1
 set tmargin 0 
 set bmargin 3
 
+set xrange [0:10]
+set xtics ("1" 1, "2" 2, "3" 3, "4" 4, "5" 5, "6" 6, "7" 7, "8" 8, "9" 9, "10" 10)
 
 set ylabel "99th Latency per Task (ms)"
 set yrange [0:610]
 
 set tics font ", 8"
 set xlabel font ", 9"
-set ylabel font ", 10"
+set ylabel font ", 9"
 set key font ",9"
 set key left
 unset xtics
