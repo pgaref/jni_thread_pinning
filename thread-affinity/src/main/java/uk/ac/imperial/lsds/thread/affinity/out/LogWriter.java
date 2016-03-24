@@ -46,7 +46,7 @@ public class LogWriter {
 	}
 	
 	public void histoDump(Histogram histo){
-		LOG.info("Persisting histo file {} path {}", this.filename, this.path);
+		LOG.info("Persisting histo file {}", this.path + this.filename);
 		// Every once in a while, we just drop some histograms
 		this.logWriter.outputComment("[ Custom Summary Average 90th 99th \t"+
 				histo.getMean()/1000000.0 + "\t"+

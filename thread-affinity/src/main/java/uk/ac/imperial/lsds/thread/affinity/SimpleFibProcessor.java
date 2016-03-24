@@ -1,8 +1,12 @@
 package uk.ac.imperial.lsds.thread.affinity;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.TimeUnit;
 
+import org.HdrHistogram.Histogram;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,10 +22,9 @@ public class SimpleFibProcessor implements Runnable {
 	private boolean pinned;
 	/* coreID */
 	private int coreID;
+	private ConcurrentLinkedQueue<BigInteger> queue;
 	
 	private static Logger LOG = LoggerFactory.getLogger(SimpleFibProcessor.class.getName());
-	
-	private ConcurrentLinkedQueue<BigInteger> queue;
 	
 	
 	/* Some metrics */
@@ -29,6 +32,10 @@ public class SimpleFibProcessor implements Runnable {
 	private long count = 0L;
 	private long start;
 	private long  duration;
+	// Max recorded value, Decimal places precision
+	private final Histogram LATENCY_HISTO = new Histogram(TimeUnit.SECONDS.toNanos(10), 3);
+	
+
 
 	public static BigInteger fib(BigInteger n) {
 	    if (n.compareTo(BigInteger.ONE) == -1 || n.compareTo(BigInteger.ONE) == 0 ) return n;
@@ -42,6 +49,15 @@ public class SimpleFibProcessor implements Runnable {
 		this.pinned = pinned;
 		this.working = true;
 		this.queue = new ConcurrentLinkedQueue<BigInteger>();
+		this.LATENCY_HISTO.reset();
+	}
+	
+	public void stopWorking(){
+		this.working = false;
+	}
+	
+	public void startWorking(){
+		this.working = true;
 	}
 	
 	/**
@@ -59,14 +75,19 @@ public class SimpleFibProcessor implements Runnable {
 		this.monitor = false;
 	}
 	
+	public boolean isWorking(){
+		return this.working == true;
+	}
+	/**
+	 * @return the latencies
+	 */
+	public Histogram getLatencies() {
+		return LATENCY_HISTO;
+	}
+	
 	public void setup(){
-		
 		if(pinned){
 			TheCPU.getInstance().bind(coreID);
-		}
-		if (monitor) {
-			/* Introduce latency measurements */
-			start = System.currentTimeMillis();
 		}
 	}
 	
@@ -74,12 +95,14 @@ public class SimpleFibProcessor implements Runnable {
 	 * @see java.lang.Runnable#run()
 	 */
 	public void run() {
-
+		setup();
 		while (working) {
-		
-			setup();
-			BigInteger toCompute = new BigInteger("30");
 			
+			if (monitor) {
+				/* Introduce latency measurements */
+				start = System.nanoTime();
+			}
+			BigInteger toCompute = new BigInteger(Integer.toString(Utils.FIBONACCI_NUMBER));
 			
 //			//Block and wait
 //			while ((toCompute = queue.poll()) == null) {
@@ -87,18 +110,19 @@ public class SimpleFibProcessor implements Runnable {
 //				// Thread.yield();
 //			}
 			
-			
-			
 			LOG.debug("[Fib Runner] Started! Value="+toCompute);
 			BigInteger tmp = fib(new BigInteger(String.valueOf(toCompute)));
 			LOG.debug("[Fib Runner] Finished! Result=" + tmp);
+			long took = System.nanoTime() - start;
 			
-			duration += System.currentTimeMillis()-start;
+			LATENCY_HISTO.recordValue(took);
+			duration += took;
+			
 			this.count+=1;
 			
 			
 			if ( monitor && ( count % 100 ==0 )) {
-				LOG.info("[Stats] Core({})  Avg {} ms per Task", this.coreID , (duration/count));
+				LOG.debug("[Stats] Core({})  Avg {} ns per Task", this.coreID , (duration/count));
 			}
 		}
 		
