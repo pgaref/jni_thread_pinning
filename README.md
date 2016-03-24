@@ -13,7 +13,11 @@ Run on CPU:  Intel(R) Core(TM) i7-4770 CPU @ 3.40GHz with
 * 4 Hyper Threads
 * 8 usable processors in total
 
-![Thead Affinity Comparison](https://github.com/pgaref/jni_thread_pinning/blob/master/graphs/thread-affinity.jpg)
+![Thead Affinity Small Tasks](https://github.com/pgaref/jni_thread_pinning/blob/master/graphs/thread-affinity-sTasks.jpg)
+
+![Thead Affinity Medium Tasks](https://github.com/pgaref/jni_thread_pinning/blob/master/graphs/thread-affinity-mTasks.jpg)
+
+![Thead Affinity Large Tasks](https://github.com/pgaref/jni_thread_pinning/blob/master/graphs/thread-affinity-lTasks.jpg)
 
 
 ## References
