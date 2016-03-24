@@ -8,10 +8,10 @@ public class Utils {
 	
 	static String PROJECT_HOME;
 	/* Experiments conf */
-	static boolean CORE_PIN = true;
-	static boolean HYPER_THREAD = false;
+	static boolean CORE_PIN = false;
+	static boolean HYPER_THREAD = true;
 	static int WORKER_THREADS = 1;
-	static int FIBONACCI_NUMBER = 20;
+	static int FIBONACCI_NUMBER = 35;
 	static int EXPERIMENT_RUNTIME = 60; // in seconds
 	/* Up to here */
 	
