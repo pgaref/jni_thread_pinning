@@ -1,0 +1,6 @@
+#[Logged with uk.ac.imperial.lsds.thread.affinity.out.LogWriter]
+#[Histogram log format version 1.2]
+#[StartTime: 1458843879.389 (seconds since epoch), Thu Mar 24 18:24:39 GMT 2016]
+#[ Custom Summary Average 90th 99th 	122.10047939233638	160.301055	221.118463]
+"StartTimestamp","Interval_Length","Interval_Max","Interval_Compressed_Histogram"
+9223370578010896.000,-9223372036854776.000,230.031,HISTFAAAAdR42i1SbY6bMBB1x4NxDCFZwloRQhQhhBBCaBVFUX6sWmm1R+iReoP+6iF6qx6gR+ibARt/zPd7Y5qfvy7G2JPZht3PL1j0I/trvv/bFH9+U3COgyt8wTEPmHUdq3Os5io2XdvU175tu3Gdbo/5UddL/1yWtr9/ju06jbd5aN+HeRjqrhnXZq1i2bXLbX1ru+e3j/s8Dvdpepsez2aFd9WPS911bVmVsemvdcyLPnZlU1WlD9e2jJUL57KIIYQCn8tzn3sX8iKUMTCzPztiH9gxOTaOjIeMg86EwUaXIWbZMAlu1ju4kHGGcJBlgwmPA9zU24gfVKInkfcsRtSSRPSWj2SdlcsLp7tNrAnRCdEJ8iWUUgZlwhAtFtntUEsKSSIss1VBK1jESQ5JCJVQoBQO4guMLNgkq4Vuj3nFOgoH8XqhZNOnJFATTGGa8pZWKand8k4MYTACArpi6YIoq/gFqjIlIWCEViLBrGrYM5YiivokuZWEVhe2kCTK7iwRcFI0mVYXKNp5Anzxyeiw17V7fy7YX5VIqpCPfNEmpxpuBDTp5aC7JJHnclJe380JOSjIMzvvvMfFY8jre/wJmGinI22E4D9o149b86SIpa/0H37eH5c=

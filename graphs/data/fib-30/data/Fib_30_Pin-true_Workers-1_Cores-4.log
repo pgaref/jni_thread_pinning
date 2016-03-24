@@ -1,0 +1,6 @@
+#[Logged with uk.ac.imperial.lsds.thread.affinity.out.LogWriter]
+#[Histogram log format version 1.2]
+#[StartTime: 1458845165.696 (seconds since epoch), Thu Mar 24 18:46:05 GMT 2016]
+#[ Custom Summary Average 90th 99th 	108.64681553623188	112.132095	119.930879]
+"StartTimestamp","Interval_Length","Interval_Max","Interval_Compressed_Histogram"
+9223370578009610.000,-9223372036854776.000,142.475,HISTFAAAAJt42i1KwQ3CMAw0F9e13ChEIa0qxI8BGIEnCzASCyBerMFMDMACSDgtd7J9d77D7bEjohetCP+78cF1eNP5swb3J6yUPedJs1nGPNWarYrVlGsRmVPMpcYYLReZo0osxSymlCypCvsQs7C4UFWwU1nQUhC4x4pmSHp0CE02h1ZaJDwk9DzA/50vBsalssURwTk6T/gCF/wAjsYMEw==
