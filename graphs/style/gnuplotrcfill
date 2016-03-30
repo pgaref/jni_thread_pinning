@@ -1,0 +1,5 @@
+set style line 1 lt 1 lw 0 lc rgb "#c0c0f0"
+set style line 2 lt 1 lw 0 lc rgb "#a0a0f0"
+set style line 3 lt 1 lw 3 lc rgb "#8080f0"
+
+set style increment user
